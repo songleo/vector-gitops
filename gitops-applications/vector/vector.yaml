@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+  name: vector
+  namespace: vector
+spec:
+  destination:
+    namespace: vector
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: vector
+    repoURL: https://github.com/songleo/vector-gitops.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
