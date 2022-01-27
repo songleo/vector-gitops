@@ -72,7 +72,7 @@ $ oc apply -n vector -k ./vector
 
 # Post-install
 
-If we successfully deployed the Vector on managedcluster, you can create custom rules on ACM Hub cluster, for example, we provide a sample to detect the `500` error:
+If we successfully deployed the Vector on managedcluster, you can create custom rules on ACM Hub cluster via ACM observability service custom rules feature. For example, we provide a sample to detect the `500` error:
 
 ```
 kind: ConfigMap
